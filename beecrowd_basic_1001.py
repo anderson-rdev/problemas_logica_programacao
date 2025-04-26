@@ -7,19 +7,19 @@
 # Imprima a mensagem "X = " (letra X maiúscula) seguido pelo valor da variável X e pelo final de linha. Cuide para que tenha um espaço antes e depois do sinal de igualdade, conforme o exemplo abaixo.
 
 # Exemplo:
-===========================================
-| Exemplos de Entrada | Exemplos de Saída |  
-|---------------------|------------------ |  
-| 10   e  9           | X = 19            |  
-| –10  e  4           | X = –6            |  
-| 15   e –7           | X = 8             |
-===========================================
+# ===========================================
+# | Exemplos de Entrada | Exemplos de Saída |  
+# |---------------------|------------------ |  
+# | 10   e  9           | X = 19            |  
+# | –10  e  4           | X = –6            |  
+# | 15   e –7           | X = 8             |
+# ===========================================
 
 #Criando Função
 def somando_ab(a, b):
     # Somando A e B
-    x = a + b
-    return x
+    resultado = a + b
+    return resultado
     
 # Leitura de Dados
 a = int(input(''))  
