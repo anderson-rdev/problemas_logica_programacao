@@ -10,17 +10,18 @@
  # “Presentation Error”.
 
 # Criando Função
-def product_new(a,b):
+def product_new(a, b):
     # Calculando o Produto entre os números
-    PROD = (a*b)
-    return PROD
+    prod = (a * b)
+    return prod
 
 #Leitura de Dados
 a = int(input())
 b = int(input())
 
 # Chamada da função para soma dos valores
-PROD = product_new(a,b)
+prod = product_new(a, b)
 
 # Imprimindo o resultado
-print(f'PROD = {PROD}')
+print(f'PROD = {prod}')
+
