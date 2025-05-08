@@ -14,13 +14,11 @@
 # ⚠️ **Importante:** Não se esqueça de adicionar uma **quebra de linha (`\n`)** ao final da saída. A ausência disso causará um erro do tipo **"Presentation Error"** na plataforma.
 
 ## ✅ Exemplos
-# ==========================
 # | Entrada   | Saída      |
 # | --------- | ---------- |
-# | 30  e  10 | SOMA = 40  |
-# | -30 e  10 | SOMA = -20 |
-# | 0   e  0  | SOMA = 0   |
-# ==========================
+# | 30  e 10  | SOMA = 40  |
+# |-30 e 10   | SOMA = -20 |
+# | 0   e 0   | SOMA = 0   |
 
 # Criando Função
 def adding_new(a,b):
