@@ -1,7 +1,10 @@
-import java.util.Scanner;  // Importa a classe Scanner para leitura de entrada do usuário
+import java.util.Scanner;
+import java.io.IOException;
 
-public class DiferencaProduto {
-    public static void main(String[] args) {
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
         // Cria uma instância de Scanner para ler os valores inseridos pelo usuário
         Scanner sc = new Scanner(System.in);  
 
@@ -20,4 +23,5 @@ public class DiferencaProduto {
         // Fecha o Scanner após o uso para liberar recursos
         sc.close();
     }
+
 }
