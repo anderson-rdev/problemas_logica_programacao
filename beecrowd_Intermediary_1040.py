@@ -38,6 +38,7 @@ try:
         # Chamando função
         media = calcular_media(N1 ,N2 ,N3, N4)
         print(f'Media: {media:.1f}')
+        
         # Definindo status de aprovação do aluno 
         if media >= 7.0: 
             print("Aluno aprovado.")
@@ -45,7 +46,7 @@ try:
             print("Aluno reprovado.")
         else:
             print("Aluno em exame.")
-            exame = float(input("Digite a nota do exame: "))
+            exame = float(input(""))
             print(f"Nota do exame: {exame:.1f}")
             
             media_final = (media + exame) / 2
