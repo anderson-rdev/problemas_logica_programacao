@@ -21,34 +21,40 @@
 #  As mensagens devem ser impressas conforme a descrição do problema.
 #  Não esqueça de imprimir o enter após o final de cada linha, caso contrário obterá "Presentation Error".
 
-# Leitura de Dados 
-notas = input().split() 
-N1 ,N2 ,N3, N4 = notas
+# Criando Função
+def calcular_media(N1 ,N2 ,N3, N4):
+    # Calculando média com peso
+    return ( ( ( float(N1) * 2) + ( float(N2) * 3 ) + ( float(N3) * 4 ) + (float(N4) * 1 )) / 10)
 
-# Calculando média com peso 
-media = (((float(N1) * 2) + (float(N2) * 3) + (float(N3) * 4) + (float(N4) * 1)) / 10)
+try:
+    # Entrada de dados
+    notas = list(map(float, input().split()))
 
-# Definindo status de aprovação do aluno 
-if media >= 7.0: 
-    print(f'Media: {media:.1f}') 
-    print("Aluno aprovado.")
-elif media < 5.0:     
-    print(f'Media: {media:.1f}') 
-    print("Aluno reprovado.")
-else: 
-    if media >= 5.0 and media <= 6.9:
-        exame = float(input())
-        print(f'Media: {media:.1f}')
-        print("Aluno em exame.")
-        # Recalculando média do aluno de exame 
-        recalcuculo = (media + exame) / 2
-        print(f"Nota do exame: {exame:.1f}")
-        print("Aluno aprovado.")
-        # Exibindo Média Final 
-        print(f"Media final: {recalcuculo:.1f}")    
+    if len(notas) != 4:
+        print("Deve ser inserido exatamente quatro números.")
     else:
-        print("Aluno reprovado.")
-        print(f"Media final: {recalcuculo:.1f}")
-
+        # Desempacotando as notas
+        N1 ,N2 ,N3, N4 = notas
+        # Chamando função
+        media = calcular_media(N1 ,N2 ,N3, N4)
+        print(f'Media: {media:.1f}')
+        # Definindo status de aprovação do aluno 
+        if media >= 7.0: 
+            print("Aluno aprovado.")
+        elif media < 5.0:     
+            print("Aluno reprovado.")
+        else:
+            print("Aluno em exame.")
+            exame = float(input("Digite a nota do exame: "))
+            print(f"Nota do exame: {exame:.1f}")
+            
+            media_final = (media + exame) / 2
+            if media_final >= 5.0:
+                print("Aluno aprovado.")
+            else:
+                print("Aluno reprovado.")
+            print(f"Media final: {media_final:.1f}")
+except ValueError:
+    print("Erro: Entrada inválida. Certifique-se de inserir quatro números de ponto flutuante.")
     
 
