@@ -1,5 +1,4 @@
 # Leia a hora inicial, minuto inicial, hora final e minuto final de um jogo. A seguir calcule a duração do jogo.
-
 # Obs: O jogo tem duração mínima de um (1) minuto e duração máxima de 24 horas.
 
 # Entrada
@@ -8,21 +7,33 @@
 # Saída
 # Mostre a seguinte mensagem: “O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)” .
 
-# Exemplo de Entrada
-hora_inicial, minuto_inicial, hora_final, minuto_final = map(int, input().split())
+# Definindo a função principal 
+def calcular_duracao_jogo(hora_inicial, minuto_inicial, hora_final, minuto_final):
+    # Converte horários para minutos desde a meia-noite
+    inicio_total_min = hora_inicial * 60 + minuto_inicial
+    fim_total_min = hora_final * 60 + minuto_final
 
-# Exemplo de Saída 
-if hora_inicial == hora_final and minuto_inicial == minuto_final:
-    print("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)")
-elif hora_inicial < hora_final or (hora_inicial == hora_final and minuto_inicial < minuto_final):
-    duracao_horas = hora_final - hora_inicial
-    duracao_horas += ((minuto_final - minuto_inicial) // 60)
-    duracao_horas = duracao_horas % 24
-    duracao_minutos = (minuto_final - minuto_inicial) % 60
-    print(f'O JOGO DUROU {duracao_horas} HORA(S) E {duracao_minutos} MINUTO(S)')
-else:
-    duracao_horas = (hora_final + 24) - hora_inicial
-    duracao_horas += ((minuto_final - minuto_inicial) // 60)
-    duracao_horas = duracao_horas % 24 
-    duracao_minutos = (minuto_final - minuto_inicial) % 60
-    print(f'O JOGO DUROU {duracao_horas} HORA(S) E {duracao_horas} MINUTO(S)')
+    # Se os horários forem iguais, o jogo durou 24 horas
+    if inicio_total_min == fim_total_min:
+        duracao_minutos = 24 * 60
+    else:
+        # Cálcula modular para lidar com passagem da meia-noite
+        duracao_minutos = (fim_total_min - inicio_total_min) % (24 * 60)
+
+    # Converte a duração total de minutos para horas e minutos
+    horas = duracao_minutos // 60
+    minutos = duracao_minutos % 60
+
+    # Retorno formatado da duração do jogo
+    return f'O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)'
+
+# Entrada dos dados
+entrada = input().split()
+hora_inicial = int(entrada[0])
+minuto_inicial = int(entrada[1])
+hora_final = int(entrada[2])
+minuto_final = int(entrada[3])
+
+# Chamada da função e impressão do resultado
+resultado = calcular_duracao_jogo(hora_inicial, minuto_inicial, hora_final, minuto_final)
+print(resultado)
