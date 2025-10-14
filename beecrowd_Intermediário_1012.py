@@ -7,11 +7,32 @@ A, B, C = map(float, input().split())
 pi = 3.14159
 
 # Calcula as áreas
-triangulo = (A * C) / 2
-circulo = pi * C ** 2
-trapezio = ((A + B) * C) / 2
-quadrado = B ** 2
-retangulo = A * B
+def calculotriangulo(A,C):
+    retorno = (A * C) / 2
+    return retorno
+
+def calculocirculo(C):
+    retorno = pi * C ** 2
+    return retorno
+
+def calculotrapezio(A,B,C):
+    retorno = ((A + B) * C) / 2
+    return retorno
+
+def calculoquadrado(B):
+    retorno = B ** 2
+    return retorno
+
+def calculoretangulo(A,B):
+    retorno = A * B
+    return retorno
+
+# Chamando funções 
+triangulo = calculotriangulo(A,C)
+circulo = calculocirculo(C)
+trapezio = calculotrapezio(A,B,C)
+quadrado = calculoquadrado(B)
+retangulo = calculoretangulo(A,B)
 
 # Exibe os resultados com 3 casas decimais
 print(f"TRIANGULO: {triangulo:.3f}")
