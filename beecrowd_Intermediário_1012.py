@@ -22,7 +22,7 @@ class CalculandoraAreas:
     def retangulo(self):
         return  self.A * self.B
     
-# Imprindo resultado     
+# Imprindo resultado    
     def exibir_resultados(self):
         print(f"TRIANGULO: {self.triangulo():.3f}")
         print(f"CIRCULO: {self.circulo():.3f}")
