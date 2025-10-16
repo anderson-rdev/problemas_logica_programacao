@@ -1,9 +1,23 @@
-# Entrada de dados 
-distancia = int(input())
-litros = float(input())
+class ConsumoMedio:
+    # Parâmetros para cálculo 
+    def __init__(self, distancia: int, litros: float):
+        self.distancia = distancia
+        self.litros = litros
+    
+    # Calculo médio de consumo por km rodado 
+    def consumokm(self):
+        return ( self.distancia / self.litros ) 
+    
+    # Imprimindo retorno    
+    def impressao(self):
+        print(f'{self.consumokm():.3f} km/l')
 
-# Calculo médio de consumo por km rodado 
-consumo = ( distancia / litros ) 
+# ===== Saída Esperada =====
+if __name__ == '__main__':
+    # Entrada de valores 
+    distancia = int(input())
+    litros = float(input())
 
-# Imprimindo retorno
-print(f'{consumo:.3f} km/l')
+    # Cria o objeto e executa a função de consumo 
+    consumo = ConsumoMedio(distancia,litros)
+    consumo.impressao()
